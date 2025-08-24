@@ -40,10 +40,10 @@ const search = async (keyword) => {
 
 // 实现你提供的酷我音乐获取链接逻辑
 const getlink = async (id, br) => {
-  const bitrate = br || '20000knone';
-  const url = `https://mobi.kuwo.cn/mobi.s?f=web&source=keluze&type=convert_url_with_sign&br=${bitrate}&rid=${id}`;
+  const bitrate = br || '99999knone';
+  const url = `https://mobi.kuwo.cn/mobi.s?f=web&user=qi666&android_id=qi666&source=kwplayer_ar_5.1.0.0_B_jiakong_vh.apk&type=convert_url_with_sign&from=PC&br=${bitrate}&rid=${id}`;
   const headers = { 'User-Agent': 'okhttp/3.10.0' };
-
+  console.log(url);
   try {
     const response = await axios.get(url, { headers });
     let apiData;
