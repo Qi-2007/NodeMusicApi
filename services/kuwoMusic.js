@@ -16,7 +16,7 @@ const search = async (keyword) => {
     const formattedResult = apiData.abslist.map(item => {
       // 检查 web_albumpic_short 字段是否存在，如果不存在则返回空字符串
       const albumPic = item['web_albumpic_short'] || '';
-      const cover_url = albumPic ? `https://img2.kuwo.cn/star/albumcover/${albumPic}` : '';
+      const cover_url = (albumPic ? `https://img2.kuwo.cn/star/albumcover/${albumPic}` : '').replace('albumcover/120','albumcover/500');
 
       return {
         id: item.DC_TARGETID,
